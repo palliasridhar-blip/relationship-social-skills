@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Relationships & Social Skills — Coaching Toolkit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="stylesheet" href="css/styles.css" />
+
+</head>
+<body>
+
+<header class="masthead">
+  <svg class="threads" viewBox="0 0 1080 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#E2654A" stroke-width="1.1" opacity="0.55">
+      <path d="M80,40 C260,140 420,20 600,120 S960,90 1040,170"/>
+      <path d="M40,180 C220,80 380,200 560,60 S900,150 1050,40"/>
+    </g>
+    <g fill="#2E7D72" opacity="0.5">
+      <circle cx="80" cy="40" r="4"/><circle cx="600" cy="120" r="4"/><circle cx="1040" cy="170" r="4"/>
+      <circle cx="40" cy="180" r="4"/><circle cx="560" cy="60" r="4"/><circle cx="1050" cy="40" r="4"/>
+    </g>
+    <g fill="#D89A4C" opacity="0.55">
+      <circle cx="300" cy="80" r="3.2"/><circle cx="820" cy="105" r="3.2"/><circle cx="420" cy="150" r="3.2"/>
+    </g>
+  </svg>
+  <div class="masthead-inner">
+    <div class="eyebrow">Brain Behaviour Academy <span class="dot"></span> Teen Coaching</div>
+    <h1 class="title">Relationships &amp; <em>Social Skills</em></h1>
+    <p class="subtitle">A complete coaching toolkit — session plans, a role-play bank, and a self-assessment with personalised insights — for building real interpersonal skill in teenagers.</p>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner" id="tabs">
+    <button class="tab active" data-view="overview"><span class="num">00</span>Overview</button>
+    <button class="tab" data-view="plans"><span class="num">14</span>Session Plans</button>
+    <button class="tab" data-view="scenarios"><span class="num">+</span>Scenario Bank</button>
+    <button class="tab" data-view="assess"><span class="num">↺</span>Self-Assessment</button>
+  </div>
+</nav>
+
+<main>
+  <!-- OVERVIEW -->
+  <section class="view active" id="view-overview">
+    <div class="section-eyebrow">The Module</div>
+    <h2 class="vh">Fourteen units, one through-line: relate well, on purpose.</h2>
+    <p class="lead">The arc moves from the relationship a teen has with themselves outward — to friends, family, peers, and the people they'll fall out with and lose. Each unit is a self-contained 45–60 minute one-to-one session. Run them in order, or pull the one a student needs this week.</p>
+
+    <div class="ov-grid">
+      <div class="map-card">
+        <h3>The unit map</h3>
+        <div class="mc-sub">Tap any unit to open its session plan →</div>
+        <div id="unitMap"></div>
+      </div>
+      <div class="how-card">
+        <h3>How to use this toolkit</h3>
+        <div class="how-step"><div class="k">1</div><div class="b"><strong>Open with the self-assessment.</strong> Have the student complete it in session one to surface a personal starting profile and pick priority units.</div></div>
+        <div class="how-step"><div class="k">2</div><div class="b"><strong>Run a session plan.</strong> Each follows the same rhythm — check-in, teach, practise, reflect, mission — so students learn the shape and settle quickly.</div></div>
+        <div class="how-step"><div class="k">3</div><div class="b"><strong>Pull a scenario.</strong> The role-play bank is filtered by theme — drop one into any session for live practice instead of talk.</div></div>
+        <div class="how-step"><div class="k">4</div><div class="b"><strong>Re-assess after 6–8 weeks.</strong> Re-run the self-assessment to make growth visible to the student and the parent.</div></div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pill">Skills revisited across units: <b>active listening</b></div>
+      <div class="pill"><b>assertiveness</b></div>
+      <div class="pill"><b>empathy</b></div>
+      <div class="pill"><b>boundaries</b></div>
+      <div class="pill"><b>repair</b></div>
+    </div>
+  </section>
+
+  <!-- SESSION PLANS -->
+  <section class="view" id="view-plans">
+    <div class="section-eyebrow">Detailed Session Plans</div>
+    <h2 class="vh">One plan per unit — ready to run.</h2>
+    <p class="lead">Built for one-to-one coaching, roughly 50 minutes. Timings are a guide; follow the student.</p>
+    <div class="sp-layout">
+      <div class="sp-list" id="spList"></div>
+      <div id="planDetail"></div>
+    </div>
+  </section>
+
+  <!-- SCENARIOS -->
+  <section class="view" id="view-scenarios">
+    <div class="section-eyebrow">Scenario &amp; Role-Play Bank</div>
+    <h2 class="vh">Live practice beats a lecture.</h2>
+    <p class="lead">Each scenario gives you a setup, who plays whom, and debrief questions. You play the other person; the student practises the skill. Filter by theme.</p>
+    <div class="filters" id="filters"></div>
+    <div class="scount" id="scount"></div>
+    <div class="scen-grid" id="scenGrid"></div>
+  </section>
+
+  <!-- SELF-ASSESSMENT -->
+  <section class="view" id="view-assess">
+    <div class="section-eyebrow">Self-Assessment</div>
+    <h2 class="vh">Where do your people-skills stand today?</h2>
+    <p class="lead">Thirty honest questions across ten areas. There are no right answers and no scores to pass — just a snapshot to grow from. Answer for how things <em>actually</em> are, not how you wish they were.</p>
+
+    <div class="sa-intro">
+      <h3>Before you begin</h3>
+      <p>Read each statement and pick how true it feels for you right now. The whole thing takes about six minutes. Your answers stay on this screen.</p>
+      <div class="legend">
+        <span><b>1</b> Not like me</span>
+        <span><b>2</b> Rarely</span>
+        <span><b>3</b> Sometimes</span>
+        <span><b>4</b> Often</span>
+        <span><b>5</b> Very like me</span>
+      </div>
+    </div>
+
+    <div id="saForm"></div>
+
+    <div class="results" id="results">
+      <div class="section-eyebrow">Your Profile</div>
+      <h2 class="vh">Your relationship-skills snapshot</h2>
+      <div class="res-grid" style="margin-top:18px">
+        <div class="chart-card">
+          <h3>The shape of your skills</h3>
+          <div class="ch-sub">Further out = a current strength. Dents = room to grow.</div>
+          <div class="chart-wrap"><canvas id="radar"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Area by area</h3>
+          <div class="ch-sub">Averaged across the questions in each area.</div>
+          <div class="bars" id="bars"></div>
+        </div>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-h">
+          <svg class="ai-spark" viewBox="0 0 24 24" fill="none"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z" fill="#D89A4C"/><circle cx="18.5" cy="17.5" r="2" fill="#D89A4C" opacity=".7"/></svg>
+          <h3>Your coaching insights</h3>
+        </div>
+        <div class="ai-sub">A personalised read of your profile — two strengths to lean on, two areas to grow, and one small experiment for this week.</div>
+        <button class="btn" id="aiBtn">Generate my insights</button>
+        <div id="aiOut" class="ai-out" style="margin-top:16px"></div>
+      </div>
+
+      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn ghost" id="retakeBtn">Retake the assessment</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>Relationships &amp; Social Skills — Coaching Toolkit.</b> Built for one-to-one teen coaching at Brain Behaviour Academy.
+  Self-assessment results are a reflection aid, not a clinical measure. For a student in genuine distress, involve a parent, counsellor, or qualified professional.
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
